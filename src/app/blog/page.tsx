@@ -1,3 +1,6 @@
+// add link import
+import Link from "next/link";
+
 // set structure of blog post data
 interface Post {
     id: number;
@@ -18,7 +21,11 @@ export default async function Blog() {
             <ul className="list-none p-4 space-y-2">
                 {/* foreach loop */}
                 {posts.map((post) => (
-                    <li key={post.id} className="bg-white p-4 rounded shadow">{ post.title}</li>
+                    <li key={post.id} className="bg-white p-4 rounded shadow">
+                        <Link href={`/blog/${post.id}`}>
+                            {post.title}
+                        </Link>
+                    </li>
                 ))}
             </ul>
         </main>
