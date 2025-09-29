@@ -4,13 +4,16 @@ import { useState } from "react";
 
 export default function Contact() {
     const [name, setName] = useState<string>('');
+   
     const [message, setMessage] = useState<string>('');
     const [confirmation, setConfirmation] = useState<string>('');
+   
     // watch name input and and update state var as input value changes
     const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setName(event.target.value);
     }
-    const handleMessageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    // watch message input and update state var as input value changes
+    function handleMessageChange(event: React.ChangeEvent<HTMLInputElement>) {
         setMessage(event.target.value);
     }
 
