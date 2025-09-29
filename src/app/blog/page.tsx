@@ -1,5 +1,6 @@
 // add link import
 import Link from "next/link";
+import PageTitle from "../components/PageTitle";
 
 // set structure of blog post data
 interface Post {
@@ -17,6 +18,7 @@ export default async function Blog() {
     // display a page and show the blog post data we recieved
     return (
         <main>
+            <PageTitle title= "Blog Post" />
             <h1>Blog</h1>
             <ul className="list-none p-4 space-y-2">
                 {/* foreach loop */}

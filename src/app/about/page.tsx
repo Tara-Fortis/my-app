@@ -1,8 +1,11 @@
 import Member from "../components/Member";
+import PageTitle from "../components/PageTitle";
+
 
 export default function About() {
     return (
         <main>
+            <PageTitle title="About" />
             <h1>About this site</h1>
             <p>We are using it to learn React with Next.js</p>
             <section>

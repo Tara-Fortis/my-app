@@ -1,7 +1,7 @@
 'use client';
 
-
 import { useState } from "react";
+import PageTitle from "./components/PageTitle";
 
 export default function Home() {
   // create a state var to track # of button clicks
@@ -14,6 +14,7 @@ export default function Home() {
   return (
     // every React component must have 1 return to send the JSX to the DOM
     <main>
+      <PageTitle title="Home" />
       <h1>COMP2012 Class Site</h1>
       <p>This site is built with Next.js</p>
       <section>
