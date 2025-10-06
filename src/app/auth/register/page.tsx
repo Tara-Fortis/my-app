@@ -1,6 +1,5 @@
 'use client';
 
-import { register } from 'module';
 import { useForm } from 'react-hook-form';
 
 interface PostFormData {
@@ -19,18 +18,19 @@ export default function Register() {
         <h1>Create a new account</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
             <fieldset>
-                    <label htmlFor="username">Username: *</label>
-                    <input id='username' type='text'{...register("username", { required: "Username is required" })} />
-                    {errors.username && <span className="error">{errors.username.message}</span>}
-                </fieldset>
+                <label htmlFor="username">Username: *</label>
+                <input id='username' type='text'{...register("username", { required: "Username is required" })} />
+                {errors.username && <span className="error">{errors.username.message}</span>}
+            </fieldset>
             <fieldset>
                 <label htmlFor="password">Password: *</label>
                 <input type="password" id="password"{...register("password", { required: "Password is required" })} />
-                    {errors.password && <span className="error">{errors.password.message}</span>}
+                {errors.password && <span className="error">{errors.password.message}</span>}
             </fieldset>
             <fieldset>
-                <label htmlFor="confrim">Confirm: *</label>
-                <input type="password" id="confirm" />
+                <label htmlFor="confirm">Confirm: *</label>
+                <input type="confirm" id="confirm"{...register("confirm", { required: "Confirm your password is required" })} />
+                {errors.confirm && <span className="error">{errors.confirm.message}</span>}
             </fieldset>
         </form>
     </main>
