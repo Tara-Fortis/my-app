@@ -2,9 +2,14 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-// shared Navbar component
+
+
+// shared UI components
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+
+// global context for shared global vars
+import { GlobalContext, GlobalProvider } from "./context/GlobalContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,10 +36,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Navbar />
-        {/* individual pages */}
-        {children}
-        <Footer/>
+        {/* Wrap all of the variables with GlobalProvider so that all components have access to these variables */}
+        <GlobalProvider>
+          <Navbar />
+          {/* individual pages */}
+          {children}
+          <Footer />
+        </GlobalProvider>
       </body>
     </html>
   );
