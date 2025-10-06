@@ -24,12 +24,12 @@ export default function Register() {
             </fieldset>
             <fieldset>
                 <label htmlFor="password">Password: *</label>
-                <input type="password" id="password"{...register("password", { required: "Password is required" })} />
+                <input type="password" id="password" {...register("password", { required: "Password is required" })} />
                 {errors.password && <span className="error">{errors.password.message}</span>}
             </fieldset>
             <fieldset>
                 <label htmlFor="confirm">Confirm: *</label>
-                <input type="confirm" id="confirm"{...register("confirm", { required: "Confirm your password is required" })} />
+                <input type="password" id="confirm" {...register("confirm", { required: "Confirm your password is required" })} />
                 {errors.confirm && <span className="error">{errors.confirm.message}</span>}
             </fieldset>
         </form>
