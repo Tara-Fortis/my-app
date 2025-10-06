@@ -94,7 +94,6 @@ nav {
   color: #ffffff;
   padding: 1rem;
   display: flex;
-  flex-direction: column;
 }
 
 .brand {
