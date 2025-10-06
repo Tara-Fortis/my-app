@@ -23,6 +23,7 @@ export default async function Blog() {
         <main>
             <PageTitle title="Blog Post" />
             <h1>Blog</h1>
+            <Link href="/blog/create-post" className="newLink">New Blog Post</Link>
             <ul className="list-none p-4 space-y-2">
                 {/* foreach loop */}
                 {posts.map((post) => (
