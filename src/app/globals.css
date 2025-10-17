@@ -112,13 +112,14 @@ nav {
   .brand {
     margin-bottom: 0;
   }
+
   .navElements {
     flex-direction: row;
     gap: 1rem;
   }
 }
 
-.navElements{
+.navElements {
   display: flex;
   flex-direction: row;
 }
@@ -145,41 +146,50 @@ footer a {
   color: #FFFFFF;
 }
 
-input, textarea {
- border: 1px solid;
- border-color: grey;
- width: 450px;
- border-radius: 0.25rem;
-}
-
-input.focus textarea.focus {
- box-shadow: 0 0 0 2px rgba(66, 153, 225, 0.5);
-}
-
+input,
 textarea {
- height: 300px;
+  border: 1px solid;
+  border-color: grey;
+  width: 450px;
+  border-radius: 0.25rem;
+}
+
+input.focus textarea.focus,
+.rte.focus {
+  box-shadow: 0 0 0 2px rgba(66, 153, 225, 0.5);
+}
+
+textarea,
+.rte {
+  height: 300px;
+}
+
+.rte {
+  border: 1px solid;
+  border-color: grey;
+  border-radius: 0.25rem;
 }
 
 label {
- width: 200px;
- display: block;
+  width: 200px;
+  display: block;
 }
 
 
 fieldset {
- margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 
 .newLink {
- color: #2563EB;
+  color: #2563EB;
 }
 
 .newLink:hover {
- text-decoration: underline;
+  text-decoration: underline;
 }
 
 .error {
- color: firebrick;
- margin: 1rem;
+  color: firebrick;
+  margin: 1rem;
 }

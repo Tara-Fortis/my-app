@@ -1,20 +1,34 @@
 'use client';
 
-// import { useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
+import SimpleWysiwyg from 'react-simple-wysiwyg';
 
 interface PostFormData {
     title: string;
     content: string;
 }
-
+// define a handler Event type for the SimpleWysiwyg editor
+interface SimpleWysiwygChangeEvent {
+    target: {
+        value: string
+    }
+}
 export default function CreatePost() {
+    // state var for blog post content
+    const [content, setContent] = useState<string>('');
+
     // used for redirecting
     const router = useRouter();
 
     // form input handling.  register: for binding form inputs
     const { register, handleSubmit, formState: { errors, isSubmitSuccessful } } = useForm<PostFormData>();
+
+    // rte change event handler
+    const handleContentChange = (event: SimpleWysiwygChangeEvent) => {
+        setContent(event.target.value);
+    }
 
     const onSubmit = async (data: PostFormData) => {
         console.log(`Submitted: ${data}`);
@@ -29,7 +43,7 @@ export default function CreatePost() {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     title: data.title,
-                    content: data.content,
+                    content: content, // now read content from state var which may now include html tags
                     username: 'tine6573@gmail.com',
                     date: postDate
                 })
@@ -58,7 +72,8 @@ export default function CreatePost() {
                 </fieldset>
                 <fieldset>
                     <label htmlFor="content">Content: *</label>
-                    <textarea {...register("content", { required: "Content is required" })}></textarea>
+                    <SimpleWysiwyg value={content} onChange={handleContentChange} className="rte"/>
+                    {/* <textarea {...register("content", { required: "Content is required" })}></textarea> */}
                     {errors.content && <span className="error">{errors.content.message}</span>}
                 </fieldset>
                 <button>Save</button>
