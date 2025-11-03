@@ -27,6 +27,7 @@ export default function Navbar() {
                 <li><Link href="/contact" className={getLinkClass('/contact')}>Contact</Link></li>
                 <li><Link href="/blog" className={getLinkClass('/blog')}>Blog</Link></li>
                 <li><Link href="/auth/register" className={getLinkClass('/auth/register')}>Register</Link></li>
+                <li><Link href="/auth/login" className={getLinkClass('/auth/login')}>Login</Link></li>
             </ul>
         </nav>
     );
