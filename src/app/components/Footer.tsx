@@ -6,7 +6,7 @@ import { useCounter } from "../context/GlobalContext";
 export default function Footer() {
     // set local var that reads global counter var from global context
     const { counter } = useCounter();
-    
+
     return (
         <footer>
             <p>&copy; {new Date().getFullYear()}</p>

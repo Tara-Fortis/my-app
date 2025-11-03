@@ -13,8 +13,11 @@ export default async function Blog() {
     // use fetch API to get blog data from Vercel sample blog API
     //const data: Response = await fetch('https://api.vercel.app/blog');
     // rich's demo blog
-    const data: Response = await fetch('https://vercel-blog-api-eta.vercel.app/api/v1/posts');
+    // const data: Response = await fetch('https://vercel-blog-api-eta.vercel.app/api/v1/posts');
 
+    // use env var for api domain
+    const apiDoman: string = process.env.API_DOMAIN!;
+    const data: Response = await fetch(`${apiDoman}/posts`);
     // convert API json to an array of Post objects (defined above)
     const posts: Post[] = await data.json();
 
