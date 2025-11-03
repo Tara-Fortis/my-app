@@ -18,12 +18,12 @@ export default async function Post({ params }: { params: { id: string } }) {
     // const res = await fetch(`https://vercel-blog-api-eta.vercel.app/api/v1/posts/${id}`);
 
     // use env var for api domain
-    const apiDomain: string = process.env.API_DOMAIN!;
+    const apiDomain: string = process.env.NEXT_PUBLIC_API_DOMAIN!;
     const res: Response = await fetch(`${apiDomain}/posts/${id}`);
 
     //console.log(res);
 
-    //convert response json to a Post objec
+    //convert response json to a Post object
     const post: Post = await res.json();
     // not found error handler
     if (!res.ok) {
