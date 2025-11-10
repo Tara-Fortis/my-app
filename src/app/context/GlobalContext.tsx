@@ -33,6 +33,6 @@ export function GlobalProvider({ children }: { children: ReactNode }) {
 // expose counter globally
 export function useCounter() {
     const context = useContext(GlobalContext);
-    if (!context) throw new Error('Conter needs a Provider');
+    if (!context) throw new Error('Counter needs a Provider');
     return context;
 }
