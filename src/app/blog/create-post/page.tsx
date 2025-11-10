@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import SimpleWysiwyg from 'react-simple-wysiwyg';
+import { useCounter } from "@/app/context/GlobalContext";
 
 interface PostFormData {
     title: string;
@@ -21,6 +22,9 @@ export default function CreatePost() {
 
     // used for redirecting
     const router = useRouter();
+
+    // access global username to automatically set it for new blog post
+    const { username } = useCounter();
 
     // form input handling.  register: for binding form inputs
     const { register, handleSubmit, formState: { errors, isSubmitSuccessful } } = useForm<PostFormData>();
@@ -48,9 +52,10 @@ export default function CreatePost() {
                 body: JSON.stringify({
                     title: data.title,
                     content: content, // now read content from state var which may now include html tags
-                    username: 'tine6573@gmail.com',
+                    author: username,
                     date: postDate
-                })
+                }),
+                credentials: 'include' // send jwt for verification to api
             });
 
             // api response that comes back
@@ -76,7 +81,7 @@ export default function CreatePost() {
                 </fieldset>
                 <fieldset>
                     <label htmlFor="content">Content: *</label>
-                    <SimpleWysiwyg value={content} onChange={handleContentChange} className="rte"/>
+                    <SimpleWysiwyg value={content} onChange={handleContentChange} className="rte" />
                     {/* <textarea {...register("content", { required: "Content is required" })}></textarea> */}
                     {errors.content && <span className="error">{errors.content.message}</span>}
                 </fieldset>
