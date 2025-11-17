@@ -70,6 +70,11 @@ export default function CreatePost() {
         }
     }
 
+    // auth control to redirect to login if user is anonymous
+    if (!username) {
+        router.push('/auth/login');
+    }
+
     return (
         <main>
             <h1>New Blog Post</h1>
