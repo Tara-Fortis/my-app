@@ -45,14 +45,14 @@ h3 {
 }
 
 h4 {
- background-color: #ebf8ff;
- border-top: 1px solid #4299e1;
- border-bottom: 1px solid #4299e1;
- color: #2b6cb0;
- padding-left: 1rem;
- padding-right: 1rem;
- padding-top: 0.75rem;
- padding-bottom: 0.75rem;
+  background-color: #ebf8ff;
+  border-top: 1px solid #4299e1;
+  border-bottom: 1px solid #4299e1;
+  color: #2b6cb0;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 
 .card {
@@ -203,4 +203,70 @@ fieldset {
 .error {
   color: firebrick;
   margin: 1rem;
+}
+
+.password-fieldset {
+  margin-bottom: 1.5rem;
+}
+
+.password-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.password-input {
+  width: 100%;
+}
+
+.password-error {
+  color: #dc2626;
+  font-size: 0.875rem;
+}
+
+.strength-bar {
+  height: 0.5rem;
+  border-radius: 0.25rem;
+  background-color: #e5e7eb;
+  margin-top: 0.5rem;
+}
+
+.strength-fill {
+  height: 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.strength-weak {
+  background-color: #dc2626;
+  width: 33%;
+}
+
+.strength-medium {
+  background-color: #facc15;
+  width: 66%;
+}
+
+
+.strength-strong {
+  background-color: #16a34a;
+  width: 100%;
+}
+
+.strength-label {
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.password-checklist {
+  font-size: 0.875rem;
+  width: 14rem;
+  margin-top: 0.25rem;
+}
+
+.check-pass {
+  color: #16a34a;
+}
+
+.check-fail {
+  color: #4b5563;
 }
