@@ -37,6 +37,7 @@ export default function Login() {
                     username: data.username,
                     password: data.password
                 }),
+                // include cookies in request
                 credentials: 'include'
             });
 
