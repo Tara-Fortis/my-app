@@ -3,7 +3,11 @@ import PageTitle from "../components/PageTitle";
 
 
 export default function About() {
+    const array1: number[] = [1, 4, 9, 16];
+    const map1: number[] = array1.map(x => x * 2);
+    
     return (
+
         <main>
             <PageTitle title="About" />
             <h1>About this site</h1>
@@ -15,6 +19,7 @@ export default function About() {
                 <Member name="Ben Deeguy" title="Treasurer" />
                 {/* Passing components to the Props */}
             </section>
+            <p>{map1}</p>
         </main>
     );
 }
